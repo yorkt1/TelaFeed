@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Dimensions, Image } from 'react-native';
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { StyleSheet, Text, View,TouchableOpacity, ScrollView, Dimensions,Image } from 'react-native';
 
+import FontAwesome from "@expo/vector-icons/FontAwesome"; //importar icones da rede
 export default function App() {
+
   return (
     <View style={styles.container}>
       <Header />
@@ -24,24 +25,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#24c28d',
   },
 
-  // Cima
+  //Cima
   Header: {
     height: '10%',
     backgroundColor: '#24c28d',
   },
 
-  // Meio
+  //Meio
   Body: {
-    height: window.height * 0.80,
+    height: window.height * 0.80, // 60% da altura da janela
     borderRadius: 20,
     marginLeft: '2%',
     marginRight: '2%',
-    backgroundColor: '#eaead4',
+    backgroundColor: '#eaead4'
   },
-
-  // Estilização do BaixoBody
+  //estilização do BaixoBody
   FooterBody: {
-    height: window.height * 0.1,
+    height: window.height * 0.1, // 60% da altura da janela
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
   },
 
-  // Baixo
+  //Baixo
   Footer: {
     height: '13%',
     backgroundColor: '#24c28d',
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  // Estilização do FooterEsquerda
+  //estilização do FooterEsquerda
   footerEsquerda: {
     height: '100%',
     backgroundColor: '#24c28d',
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  // Estilização do FooterMeio
+  //estilização do FooterMeio
   footerMeio: {
     height: '100%',
     backgroundColor: '#24c28ded',
@@ -81,9 +81,10 @@ const styles = StyleSheet.create({
     marginTop: -40,
     borderTopRightRadius: 450,
     borderTopLeftRadius: 450,
+
   },
 
-  // Estilização do FooterDireita
+  //estilização do FooterDireita
   footerDireita: {
     height: '100%',
     backgroundColor: '#24c28d',
@@ -100,7 +101,8 @@ const styles = StyleSheet.create({
   ConteudoPlantas: {
     height: '35%',
     width: '100%',
-    backgroundColor: '#eaead4',
+    backgroundColor: '#eaead4'
+
   },
 
   DivInforma: {
@@ -109,10 +111,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 25,
     borderColor: '#24c28d',
+    // borderWidth: '1px',
     alignItems: 'center',
-    flexDirection: 'row',
+    flexDirection: 'row'
+    
+
   },
-  
   header_imagem_um: {
     marginLeft: 20,
     height: '130px',
@@ -120,126 +124,131 @@ const styles = StyleSheet.create({
     backgroundColor: '#eaead4',
     borderRadius: 25,
     borderColor: '#24c28d',
-    borderWidth: 3,
+    borderWidth: '3px',
+
   },
-  
   imgPlantas: {
     borderRadius: 25,
   },
-
-  InformaTextoDiv: {
-    height: '80%',
-    flex: 1,
-  },
-
-  Textotitulo: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: '#8b8a7a',
-    marginLeft: 30,
-  },
-
-  TextoDescricao: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#8b8a7a',
-    marginLeft: 30,
-  },
-
   linha: {
     backgroundColor: '#8b8a7a',
     height: 1,
     width: '90%',
-    alignSelf: 'center',
-    margin: 10,
-    justifyContent: 'flex-end',
+  alignSelf: 'center',
+  },
+  InformaTextoDiv:{
+height:'80%',
+flex: 1
+  },
+  Textotitulo: {
+    fontSize: 25, fontWeight: 'bold', color: '#8b8a7a',
+    marginLeft:30
   },
 
-  bola: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: '#24c28d',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  TextoDescricao:{
 
-  texto: {
-    fontSize: 24,
-    color: 'white',
-  },
+    fontSize: 13, fontWeight: 'bold', color: '#8b8a7a',
+    marginLeft:30
+  }
+
 });
 
 function Header() {
+
   return (
+
     <View style={styles.Header}></View>
+
   );
+
 }
 
 function Body() {
+
+
   return (
+
     <View style={styles.Body}>
+
       <View style={styles.ConteudoPlantas}>
+
         <View style={styles.DivInforma}>
+
           <View style={styles.header_imagem_um}>
-            <Image style={styles.imgPlantas} source={require('./fotosplantas/dipla.png')} alt="Descrição da imagem" />
+            <Image style={styles.imgPlantas}  source={require('./fotosplantas/dipla.png')} alt="Descrição da imagem" />
           </View>
-          <View style={styles.InformaTextoDiv}>
+            <View style={styles.InformaTextoDiv}>
             <Text style={styles.Textotitulo}>Zamioculca</Text>
-            <Text style={styles.TextoDescricao}>
-              A Zamioculca é uma planta originária da Tanzânia, na África.
-              Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
-            </Text>
-          </View>
+             <Text style={styles.TextoDescricao }>
+                                    A Zamioculca é uma planta originária da Tanzânia, na África.
+                                    Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
+                                </Text>
+             </View>
         </View>
         <View style={styles.linha}></View>
+
         <View style={styles.DivInforma}>
+
           <View style={styles.header_imagem_um}>
-            <Image style={styles.imgPlantas} source={require('./fotosplantas/espa.png')} />
+            <Image style={styles.imgPlantas} source={require('./fotosplantas/espa.png')} alt="Descrição da imagem" />
           </View>
           <View style={styles.InformaTextoDiv}>
-            <Text style={styles.Textotitulo}>Zamioculca</Text>
-            <Text style={styles.TextoDescricao}>
-              A Zamioculca é uma planta originária da Tanzânia, na África.
-              Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
-            </Text>
+          <Text style={styles.Textotitulo}>Zamioculca</Text>
+             <Text style={styles.TextoDescricao }>
+                                    A Zamioculca é uma planta originária da Tanzânia, na África.
+                                    Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
+                                </Text>
           </View>
         </View>
-        <View style={styles.linha}></View>
+          <View style={styles.linha}></View>
         <View style={styles.DivInforma}>
+
           <View style={styles.header_imagem_um}>
             <Image style={styles.imgPlantas} source={require('./fotosplantas/pepe.png')} alt="Descrição da imagem" />
           </View>
           <View style={styles.InformaTextoDiv}>
-            <Text style={styles.Textotitulo}>Zamioculca</Text>
-            <Text style={styles.TextoDescricao}>
-              A Zamioculca é uma planta originária da Tanzânia, na África.
-              Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
-            </Text>
+          <Text style={styles.Textotitulo}>Zamioculca</Text>
+             <Text style={styles.TextoDescricao }>
+                                    A Zamioculca é uma planta originária da Tanzânia, na África.
+                                    Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
+                                </Text>
           </View>
         </View>
         <View style={styles.linha}></View>
         <View style={styles.DivInforma}>
+
           <View style={styles.header_imagem_um}>
             <Image style={styles.imgPlantas} source={require('./fotosplantas/zami.png')} alt="Descrição da imagem" />
           </View>
           <View style={styles.InformaTextoDiv}>
-            <Text style={styles.Textotitulo}>Zamioculca</Text>
-            <Text style={styles.TextoDescricao}>
-              A Zamioculca é uma planta originária da Tanzânia, na África.
-              Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
-            </Text>
+          <Text style={styles.Textotitulo}>Zamioculca</Text>
+             <Text style={styles.TextoDescricao }>
+                                    A Zamioculca é uma planta originária da Tanzânia, na África.
+                                    Ela pertence à família das Araceae e seu nome científico é Zamioculcas Zamiifolia.
+                                </Text>
           </View>
         </View>
+
+
+
       </View>
-      <View></View>
+
+      <View>
+      </View>
+
     </View>
+
   );
+
 }
 
+
 function Footer() {
+
   return (
+
     <View style={styles.Footer}>
+
       <TouchableOpacity style={styles.footerEsquerda}>
         <FontAwesome
           name='home'
@@ -247,6 +256,7 @@ function Footer() {
           color='#8b8a7a'
         />
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.footerMeio}>
         <FontAwesome
           name='user'
@@ -254,6 +264,7 @@ function Footer() {
           color='#8b8a7a'
         />
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.footerDireita}>
         <FontAwesome
           name='star'
@@ -261,6 +272,9 @@ function Footer() {
           color='#8b8a7a'
         />
       </TouchableOpacity>
+
     </View>
+
   );
+
 }
